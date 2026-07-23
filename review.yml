@@ -1,0 +1,105 @@
+aid: monument-bank
+name: Monument Bank
+review:
+  question: >-
+    Does Monument Bank expose a public developer portal, a confirmed UK Open
+    Banking Open Data endpoint, and documented OBIE Read/Write conformance?
+  answer: false
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    Monument Bank Limited (FRN 849724, PRA-authorised, FCA/PRA-regulated) is a
+    UK challenger bank serving the mass-affluent segment with an app-only
+    savings proposition (easy access, cash ISAs, limited access savers, notice
+    accounts, fixed-term deposits) and planned property lending. It is NOT one
+    of the CMA9 mandated banks.
+
+    No public developer portal, sandbox, API catalogue, or getting-started
+    surface could be found. Probes of the usual hosts and paths - developer.
+    and developers.monument.co (DNS did not resolve, curl 000),
+    monument.co/developer, /developers, /open-banking, /api (all HTTP 404) -
+    turned up nothing. The bank operates a real API host at api.monument.co,
+    but every request to it (root, /open-banking/v3.1/aisp,
+    /open-banking/v2.3/atms, /open-data/v2.3/atms,
+    /.well-known/openid-configuration) returned HTTP 403 (access-controlled /
+    WAF-gated), so no endpoint could be confirmed with a 200. No
+    /.well-known/security.txt (404) and no OBIE Ozone manifest were found.
+
+    NO live Open Data endpoint was confirmed for Monument. Because Monument's
+    accounts are savings/deposit products rather than online-accessible payment
+    accounts, it is likely out of scope for, or a limited participant in, the
+    mandatory Open Data / Read-Write regime. Where it does participate it would
+    conform to the OBIE Open Data and Read/Write API Standards.
+
+    Spec provenance: the four specifications harvested into openapi/ are the
+    SHARED OBIE UK Open Banking standard documents pulled verbatim from the
+    Open Banking Ltd GitHub organisation - they are the standard, NOT
+    Monument-proprietary contracts, and are labelled as such throughout apis.yml
+    and this review. The Read/Write auth model per the standard is FAPI-grade
+    OAuth2/OIDC + mutual-TLS + PSD2 strong customer authentication, with
+    dynamic client registration using OBIE/eIDAS certificates.
+  developerPortal:
+    found: false
+    note: No developer.* host resolves; no /developer, /developers, /open-banking, or /api page on www.monument.co (all 404).
+  openDataConfirmed: false
+  openDataBaseURL: ""
+  readWriteConformance:
+    standard: OBIE Read/Write API Standard v3.1
+    authModel: FAPI OAuth2/OIDC + mutual-TLS + PSD2 SCA + OBIE/eIDAS dynamic client registration
+    specProvenance: OBIE-standard (shared), not Monument-proprietary
+    verifiedForMonument: false
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.monument.co
+      documented: false
+      note: Host resolves but returns HTTP 403 to all probed paths; no public documentation. Endpoints unverified.
+    - protocol: REST
+      scheme: https
+      note: OBIE Open Data reference-data surface (products/ATMs/branches/PCA/BCA/SME loans/commercial credit cards) per the shared standard. No Monument endpoint confirmed.
+      documented: false
+  probes:
+    - url: https://www.monument.co/
+      status: 200
+    - url: https://api.monument.co/
+      status: 403
+    - url: https://api.monument.co/open-banking/v3.1/aisp
+      status: 403
+    - url: https://api.monument.co/open-banking/v2.3/atms
+      status: 403
+    - url: https://api.monument.co/open-data/v2.3/atms
+      status: 403
+    - url: https://api.monument.co/.well-known/openid-configuration
+      status: 403
+    - url: https://developer.monument.co/
+      status: 000
+    - url: https://www.monument.co/developer
+      status: 404
+    - url: https://www.monument.co/.well-known/security.txt
+      status: 404
+sources:
+  - url: https://www.monument.co/about
+    type: About
+    note: Identity - full banking licence Nov 2021, mass-affluent focus, 33 Cavendish Square London, Future Fifty 2024.
+  - url: https://register.fca.org.uk/s/firm?id=0010X00004ksS6tQAE
+    type: Compliance
+    note: FCA register entry, Monument Bank Limited, FRN 849724.
+  - url: https://www.openbanking.org.uk/regulated-providers/monument-bank/
+    type: Documentation
+    note: Open Banking Ltd regulated-provider listing; no developer portal or endpoint URLs published.
+  - url: https://github.com/OpenBankingUK/read-write-api-specs
+    type: OpenAPI
+    note: Source of the shared OBIE Read/Write standard specs harvested into openapi/ (account-info, payment-initiation, confirmation-funds).
+  - url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+    type: OpenAPI
+    note: Source of the shared OBIE Open Data standard swagger harvested into openapi/.
+harvestedSpecs:
+  - path: openapi/obie-opendata-swagger.json
+    provenance: OBIE Open Data Standard (shared, Swagger 2.0 v1.3) - not Monument-proprietary
+  - path: openapi/obie-account-info-openapi.yaml
+    provenance: OBIE Read/Write Account & Transaction (AIS) Standard (shared, OpenAPI 3.0) - not Monument-proprietary
+  - path: openapi/obie-payment-initiation-openapi.yaml
+    provenance: OBIE Read/Write Payment Initiation (PIS) Standard (shared, OpenAPI 3.0) - not Monument-proprietary
+  - path: openapi/obie-confirmation-funds-openapi.yaml
+    provenance: OBIE Read/Write Confirmation of Funds (CBPII) Standard (shared, OpenAPI 3.0) - not Monument-proprietary
