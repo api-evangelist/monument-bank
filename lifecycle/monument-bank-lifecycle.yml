@@ -1,0 +1,23 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/*.yaml (versioning), apis.yml baseURLs
+# Derived from the OBIE-standard specs and baseURLs wired into this repo. Monument
+# publishes no public developer portal, changelog, deprecation policy, SLA, or API
+# status page, so only the versioning scheme (inherited from the OBIE Read/Write
+# and Open Data Standards) is asserted; the remaining fields are recorded as absent.
+versioning:
+  scheme: uri-path
+  read_write_version: v3.1
+  open_data_version: v2.3
+  docs: https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/
+  note: Version is carried in the URI path (e.g. /open-banking/v3.1/aisp). Follows the OBIE Read/Write API Standard release train.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No Monument-published deprecation policy or RFC 8594 Sunset/Deprecation header support identified.
+sla:
+  url: null
+  uptime_target: null
+  note: OBIE mandates ASPSP availability/performance reporting to the regulator, but Monument publishes no public SLA or availability page.
+status_page: null
+deprecated_operations: []

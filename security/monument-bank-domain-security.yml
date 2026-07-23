@@ -1,0 +1,29 @@
+generated: '2026-07-23'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.monument.co
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Mar  5 23:59:59 2027 GMT
+  hsts: false
+- host: api.monument.co
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Mar  5 23:59:59 2027 GMT
+  hsts: null
+- host: developer.openbanking.org.uk
+  https: false
+domains:
+- domain: monument.co
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none
+- domain: openbanking.org.uk
+  dnssec: true
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none

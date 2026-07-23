@@ -1,0 +1,38 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/obie-account-info-openapi.yaml, openapi/obie-payment-initiation-openapi.yaml,
+  openapi/obie-confirmation-funds-openapi.yaml, openapi/obie-opendata-swagger.json
+# Derived from the shared OBIE Read/Write + Open Data Standard specs wired into this
+# repo, plus the PSD2/FCA regulatory framing in apis.yml. Standards asserted are
+# those the OBIE profile mandates; Monument participates as a UK ASPSP but publishes
+# no independent conformance attestation.
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: openapi securitySchemes declare oauth2 (TPPOAuth2Security clientCredentials, PSUOAuth2Security authorizationCode)
+  - id: oidc
+    conforms: true
+    evidence: OBIE Read/Write profile requires OpenID Connect for PSU authentication and id_token
+  - id: fapi
+    conforms: true
+    evidence: FAPI-grade request headers (x-fapi-auth-date, x-fapi-customer-ip-address, x-fapi-interaction-id) present across operations
+  - id: mutual-tls
+    conforms: true
+    evidence: OBIE FAPI profile mandates mutual-TLS (MTLS) client authentication for TPP-ASPSP calls
+  - id: psd2
+    conforms: true
+    evidence: apis.yml regulatory framing - UK ASPSP under PSD2 / FCA, strong customer authentication (SCA)
+  - id: idempotency
+    conforms: true
+    evidence: x-idempotency-key parameter required on OBIE Payment Initiation POST operations
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: OBIE uses its own OBErrorResponse1 envelope (application/json), not application/problem+json
+  - id: json-api
+    conforms: false
+  - id: scim
+    conforms: false
+  - id: fhir
+    conforms: false
+  - id: odata
+    conforms: false

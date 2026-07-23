@@ -1,0 +1,67 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/obie-account-info-openapi.yaml, openapi/obie-payment-initiation-openapi.yaml,
+  openapi/obie-confirmation-funds-openapi.yaml
+# NOTE: Derived from the shared OBIE Read/Write API Standard specs wired into this
+# repo. Monument publishes no public developer portal and api.monument.co returns
+# 403, so these are the OBIE-standard error semantics an authorised TPP would meet,
+# not a verified Monument-specific error contract.
+format: obie-error   # NOT rfc9457 - OBIE uses its own OBErrorResponse1 envelope (application/json), not application/problem+json
+envelope:
+  schema: OBErrorResponse1
+  media_type: application/json
+  fields:
+    - name: Code
+      description: High level textual error code (e.g. "400 BadRequest").
+    - name: Id
+      description: Unique reference for the error instance, for audit purposes.
+    - name: Message
+      description: Brief error description.
+    - name: Errors
+      description: Array of detailed error objects (ErrorCode, Message, Path, Url).
+  detail_fields:
+    - name: ErrorCode
+      description: OBIE high-level error code, e.g. UK.OBIE.Field.Missing.
+    - name: Message
+      description: Description of the error that occurred.
+    - name: Path
+      description: Recommended JSON Path of the field in error (optional).
+    - name: Url
+      description: URL to documentation to help remediation (optional).
+problems:
+  - status: 400
+    title: Bad Request
+    description: The request was malformed, failed validation, or violated OBIE resource rules.
+    envelope: OBErrorResponse1
+  - status: 401
+    title: Unauthorized
+    description: Missing, invalid, or expired access token; SCA/re-authentication may be required.
+  - status: 403
+    title: Forbidden
+    description: The token or consent does not grant access to the requested resource.
+  - status: 404
+    title: Not Found
+    description: The requested resource does not exist.
+  - status: 405
+    title: Method Not Allowed
+    description: The HTTP method is not supported for this resource.
+  - status: 406
+    title: Not Acceptable
+    description: The requested representation (Accept header) is not supported.
+  - status: 409
+    title: Conflict
+    description: The request conflicts with the current state (e.g. duplicate consent/payment).
+  - status: 415
+    title: Unsupported Media Type
+    description: The request Content-Type is not supported.
+  - status: 422
+    title: Unprocessable Entity
+    description: The request was well-formed but semantically invalid per OBIE rules.
+    envelope: OBErrorResponse1
+  - status: 429
+    title: Too Many Requests
+    description: Rate limit exceeded; retry after the indicated interval.
+  - status: 500
+    title: Internal Server Error
+    description: An unexpected error occurred at the ASPSP.
+    envelope: OBErrorResponse1

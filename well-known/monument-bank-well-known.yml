@@ -1,0 +1,33 @@
+generated: '2026-07-23'
+method: searched
+# Probed the /.well-known/ discovery surface on the API host (api.monument.co) and
+# the corporate host (www.monument.co) on 2026-07-23. The API host is fully
+# access-controlled (uniform 403 on every path, including /.well-known/*), and the
+# corporate host returns 404 for the discovery paths. No well-known document was
+# retrievable (0 x 200), so no WellKnown/SecurityTxt pointer is wired - absence is
+# a valid, recorded result. A genuine /llms.txt WAS found on www.monument.co (200,
+# saved verbatim to llms/monument-bank-llms.txt).
+hosts:
+  - host: https://api.monument.co
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+      - path: /.well-known/openid-configuration
+        status: 403
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+      - path: /.well-known/oauth-protected-resource
+        status: 403
+      - path: /.well-known/api-catalog
+        status: 403
+  - host: https://www.monument.co
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /security.txt
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /llms.txt
+        status: 200
+        file: ../llms/monument-bank-llms.txt

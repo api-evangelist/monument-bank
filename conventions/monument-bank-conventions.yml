@@ -1,0 +1,37 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/obie-account-info-openapi.yaml, openapi/obie-payment-initiation-openapi.yaml,
+  openapi/obie-confirmation-funds-openapi.yaml
+# Cross-cutting request/response semantics derived from the shared OBIE Read/Write
+# API Standard specs wired into this repo. These are the OBIE conventions an
+# authorised TPP integrating with Monument (as a UK ASPSP) would follow.
+authentication:
+  style: oauth2 + oidc + mutual-tls
+  detail: TPP client-credentials token (account/transaction access grant); PSU authorization-code flow with SCA for consented resource access. See authentication/monument-bank-authentication.yml.
+idempotency:
+  supported: true
+  mechanism: header
+  header: x-idempotency-key
+  scope: OBIE Payment Initiation (PIS) POST operations - domestic, scheduled, standing-order, international, and file payments.
+  max_length: 40
+  note: OBIE requires the ASPSP to treat a repeated x-idempotency-key with an identical request as the same payment for a defined retention window, preventing duplicate payment initiation.
+tracing:
+  request_id_header: x-fapi-interaction-id
+  detail: FAPI interaction id echoed by the ASPSP for end-to-end correlation; x-fapi-auth-date and x-fapi-customer-ip-address also carried.
+pagination:
+  style: link-based
+  response_fields: [Links.Self, Links.First, Links.Prev, Links.Next, Links.Last, Meta.TotalPages]
+  detail: OBIE responses wrap Data in a resource envelope with a Links block (Self/First/Prev/Next/Last) and a Meta block (TotalPages, FirstAvailableDateTime, LastAvailableDateTime).
+versioning:
+  style: uri-path
+  detail: Major version in the path (v3.1 Read/Write, v2.3 Open Data). See lifecycle/monument-bank-lifecycle.yml.
+error_envelope:
+  schema: OBErrorResponse1
+  media_type: application/json
+  detail: Code + Id + Message + Errors[] (ErrorCode/Message/Path/Url). See errors/monument-bank-problem-types.yml.
+content_negotiation:
+  media_types: [application/json, "application/json; charset=utf-8", application/jose+jwe]
+  detail: OBIE supports optional JOSE/JWE signed and encrypted payloads alongside plain JSON.
+rate_limiting:
+  signal: HTTP 429 Too Many Requests
+  detail: Rate-limit exceed surfaced as 429; no standardised rate-limit response headers defined by the OBIE standard.

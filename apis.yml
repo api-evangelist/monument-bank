@@ -47,7 +47,7 @@ tags:
 - Account Information
 - Payments
 created: '2026-07-23'
-modified: '2026-07-23'
+modified: '2026-07-23T10:00:00Z'
 specificationVersion: '0.19'
 apis:
 - aid: monument-bank:monument-open-data-api
@@ -141,6 +141,28 @@ apis:
   - type: APIReference
     url: https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/
 common:
+- type: AgenticAccess
+  url: agentic-access/monument-bank-agentic-access.yml
+- type: ErrorCatalog
+  url: errors/monument-bank-problem-types.yml
+- type: Conformance
+  url: conformance/monument-bank-conformance.yml
+- type: Lifecycle
+  url: lifecycle/monument-bank-lifecycle.yml
+- type: Conventions
+  url: conventions/monument-bank-conventions.yml
+- type: Idempotency
+  url: conventions/monument-bank-conventions.yml
+- type: DataModel
+  url: data-model/monument-bank-data-model.yml
+- type: LLMsTxt
+  url: llms/monument-bank-llms.txt
+- type: DomainSecurity
+  url: security/monument-bank-domain-security.yml
+- type: OAuthScopes
+  url: scopes/monument-bank-scopes.yml
+- type: Authentication
+  url: authentication/monument-bank-authentication.yml
 - type: Website
   url: https://www.monument.co/
 - type: About

@@ -1,0 +1,89 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/obie-account-info-openapi.yaml, openapi/obie-payment-initiation-openapi.yaml
+# Entity-relationship graph derived from the OBIE Read/Write API Standard schemas
+# (OBReadAccount6, OBReadBalance1, OBReadTransaction6, etc.) wired into this repo.
+# Relationships follow the OBIE data model keyed on AccountId / ConsentId.
+entities:
+  - name: Account
+    schema: OBReadAccount6
+    key: AccountId
+    domain: account-information
+  - name: Balance
+    schema: OBReadBalance1
+    domain: account-information
+  - name: Transaction
+    schema: OBReadTransaction6
+    domain: account-information
+  - name: Beneficiary
+    schema: OBReadBeneficiary5
+    domain: account-information
+  - name: StandingOrder
+    schema: OBReadStandingOrder6
+    domain: account-information
+  - name: DirectDebit
+    schema: OBReadDirectDebit2
+    domain: account-information
+  - name: Statement
+    schema: OBReadStatement2
+    domain: account-information
+  - name: Party
+    schema: OBReadParty2/OBReadParty3
+    domain: account-information
+  - name: Product
+    schema: OBReadProduct2
+    domain: account-information
+  - name: AccountAccessConsent
+    schema: OBReadConsent1
+    key: ConsentId
+    domain: consent
+  - name: DomesticPaymentConsent
+    key: ConsentId
+    domain: payment-initiation
+  - name: DomesticPayment
+    key: DomesticPaymentId
+    domain: payment-initiation
+  - name: FundsConfirmationConsent
+    key: ConsentId
+    domain: confirmation-of-funds
+relationships:
+  - from: Account
+    to: Balance
+    type: has_many
+    via: AccountId
+  - from: Account
+    to: Transaction
+    type: has_many
+    via: AccountId
+  - from: Account
+    to: Beneficiary
+    type: has_many
+    via: AccountId
+  - from: Account
+    to: StandingOrder
+    type: has_many
+    via: AccountId
+  - from: Account
+    to: DirectDebit
+    type: has_many
+    via: AccountId
+  - from: Account
+    to: Statement
+    type: has_many
+    via: AccountId
+  - from: Account
+    to: Party
+    type: has_many
+    via: AccountId
+  - from: AccountAccessConsent
+    to: Account
+    type: has_many
+    via: ConsentId
+  - from: DomesticPayment
+    to: DomesticPaymentConsent
+    type: belongs_to
+    via: ConsentId
+  - from: FundsConfirmationConsent
+    to: Account
+    type: belongs_to
+    via: DebtorAccount
