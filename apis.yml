@@ -48,7 +48,7 @@ tags:
 - Payments
 created: '2026-07-23'
 modified: '2026-07-23T10:00:00Z'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: monument-bank:monument-open-data-api
   name: Monument Bank Open Data API
