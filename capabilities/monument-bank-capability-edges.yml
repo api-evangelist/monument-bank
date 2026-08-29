@@ -1,0 +1,202 @@
+slug: monument-bank
+provider: Monument Bank
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Banking & Capital Markets
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 20
+edges:
+- tag: International Payments
+  spec_file: monument-bank-international-payments-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.92
+  evidence: POST /international-payments "Initiate an International Payment"; schema OBWriteInternationalResponse5
+  reason: Initiation and tracking of international (cross-border, multi-currency) payments.
+- tag: Domestic Payments
+  spec_file: monument-bank-domestic-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.9
+  evidence: POST /domestic-payments  "Initiate a Domestic Payment"; OBWriteDomestic2, OBDomesticRefundAccount1
+  reason: Directly initiates and retrieves domestic payment instructions — payment initiation management
+    under UK Open Banking PISP.
+- tag: Domestic Standing Order Consents
+  spec_file: monument-bank-domestic-standing-order-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.9
+  evidence: POST /domestic-standing-order-consents "Create a Domestic Standing Order Consent"; "Swagger
+    for Payment Initiation API Specification"
+  reason: UK Open Banking payment initiation consent capture/authorisation for a domestic standing order
+    — payment instruction capture, validation and authorisation.
+- tag: Domestic Standing Orders
+  spec_file: monument-bank-domestic-standing-orders-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.9
+  evidence: POST /domestic-standing-orders "Submit a Domestic Standing Order"; schema OBWriteDomesticStandingOrder3
+  reason: Submission and retrieval of domestic standing order payment instructions under the Payment Initiation
+    API — payment initiation of domestic recurring payments.
+- tag: International Payment Consents
+  spec_file: monument-bank-international-payment-consents-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.9
+  evidence: POST /international-payment-consents "Create an International Payment Consent"; "Confirm Funds
+    Availability for an International Payment"
+  reason: Consent/authorisation for cross-border payment instructions under Payment Initiation — international
+    payment management.
+- tag: International Scheduled Payments
+  spec_file: monument-bank-international-scheduled-payments-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.9
+  evidence: POST /international-scheduled-payments "Initiate an International Scheduled Payment"
+  reason: Initiation of future-dated cross-border payments under the Payment Initiation API.
+- tag: International Scheduled Payments Consents
+  spec_file: monument-bank-international-scheduled-payments-consents-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.88
+  evidence: POST /international-scheduled-payment-consents "Create an International Scheduled Payment
+    Consent"
+  reason: Consent capture and funds-availability confirmation for cross-border scheduled payments.
+- tag: International Standing Orders
+  spec_file: monument-bank-international-standing-orders-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.88
+  evidence: POST /international-standing-orders "Submit an International Standing Order"
+  reason: Submission of recurring cross-border payment instructions under Payment Initiation.
+- tag: International Standing Orders Consents
+  spec_file: monument-bank-international-standing-orders-consents-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.88
+  evidence: POST /international-standing-order-consents "Create an International Standing Order Consent"
+  reason: Consent creation/authorisation for recurring cross-border payment instructions.
+- tag: Domestic Payment Consents
+  spec_file: monument-bank-domestic-payment-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.85
+  evidence: POST /domestic-payment-consents  "Create a Domestic Payment Consent"; "Confirm availability
+    of funds for a Domestic Payment"
+  reason: 'Open Banking payment initiation consent: capture and authorisation of a payment instruction
+    plus funds availability check, which is exactly payment instruction capture, validation and authorisation.'
+- tag: Domestic Scheduled Payment Consents
+  spec_file: monument-bank-domestic-scheduled-payment-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.85
+  evidence: POST /domestic-scheduled-payment-consents  "Create a Domestic Scheduled Payment Consent";
+    OBWriteDomesticScheduledConsentResponse5
+  reason: Consent capture and authorisation for a future-dated domestic payment instruction — payment
+    instruction capture, validation, authorisation.
+- tag: Domestic Scheduled Payments
+  spec_file: monument-bank-domestic-scheduled-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.85
+  evidence: POST /domestic-scheduled-payments  "Initiate a Domestic Scheduled Payment"; OBWriteDomesticScheduled2
+  reason: Initiation and retrieval of scheduled domestic payment instructions, squarely payment initiation
+    management.
+- tag: File Payment Consents
+  spec_file: monument-bank-file-payment-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.85
+  evidence: POST /file-payment-consents "Create a File Payment Consent"; "Upload a File for a ConsentId"
+  reason: Consent creation and file upload for bulk file-based payment instructions under Payment Initiation
+    — instruction capture and authorisation.
+- tag: File Payments
+  spec_file: monument-bank-file-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.85
+  evidence: POST /file-payments "Submit a File Payment"; "Get payment details for a File Payment"
+  reason: Submission and status/reporting of bulk file payments under the Payment Initiation API — payment
+    instruction submission and processing status.
+- tag: ATM
+  spec_file: monument-bank-atm-api-openapi.yml
+  capability_id: BC-1300.50
+  capability_id_l1: BC-1300
+  capability_name: Banking Channels Management
+  confidence: 0.78
+  evidence: GET /atms in "Open Data ATM API" — "Latest Swagger specification for OpenData"
+  reason: UK Open Banking open-data ATM endpoint publishing the bank's ATM estate, which is banking channel
+    (ATM) information; the surface is thin but unambiguous in intent.
+- tag: Parties
+  spec_file: monument-bank-parties-api-openapi.yml
+  capability_id: BC-1300.40
+  capability_id_l1: BC-1300
+  capability_name: Customer Information Management
+  confidence: 0.78
+  evidence: GET /accounts/{AccountId}/parties  Get Parties for an AccountId; schemas OBReadParty2, OBParty2,
+    OBPartyRelationships1, EmailAddress, PhoneNumber_1
+  reason: Party resource returns the customer/account-holder identity and contact details held by the
+    bank — banking customer information management. Some chance it is better read as customer servicing,
+    hence not maximal confidence.
+- tag: Scheduled Payments
+  spec_file: monument-bank-scheduled-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.72
+  evidence: GET /accounts/{AccountId}/scheduled-payments  Get Scheduled Payments for an AccountId; schemas
+    ScheduledPaymentId, OBInternalScheduleType1Code, DebtorReference
+  reason: Exposes future-dated payment instructions held against an account — payment instruction capture/authorisation
+    domain. Read-only access tempers confidence slightly but the subject matter is clearly scheduled payment
+    instructions.
+- tag: Standing Orders
+  spec_file: monument-bank-standing-orders-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.72
+  evidence: GET /standing-orders  GetStandingOrders; schemas OBReadStandingOrder6, OBFrequency6Code, NextPaymentDateTime,
+    ExternalMandateStatus1Code
+  reason: Standing order mandates are recurring payment instructions on the account, i.e. payment initiation
+    instructions and their schedules. Read-only surface only, hence moderate confidence.
+- tag: Branch
+  spec_file: monument-bank-branch-api-openapi.yml
+  capability_id: BC-1300.50
+  capability_id_l1: BC-1300
+  capability_name: Banking Channels Management
+  confidence: 0.7
+  evidence: GET /branches, "Latest Swagger specification for OpenData"
+  reason: Open Data branch locator endpoint publishing physical branch/channel information, matching Banking
+    Channels Management (branch, ATM, online). Context is thin (no schemas).
+- tag: Products
+  spec_file: monument-bank-products-api-openapi.yml
+  capability_id: BC-1310.10
+  capability_id_l1: BC-1310
+  capability_name: Product Catalogue Management
+  confidence: 0.7
+  evidence: GET /products  GetProducts; schemas OBPCAData1, OB_OtherFeeChargeDetailType, OB_InterestRateType1Code_1,
+    OB_FeeFrequency1Code_1
+  reason: Operations return banking product definitions with fee, charge and interest-rate structures
+    — the product catalogue/master for accounts. Could equally be read as product parameter management,
+    so L2 confidence is moderate.

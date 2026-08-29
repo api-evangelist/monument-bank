@@ -707,6 +707,9 @@ apis:
   - type: APIReference
     url: https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/
 common:
+- type: CapabilityMap
+  url: capabilities/monument-bank-capability-edges.yml
+  name: Monument Bank Business Capability Map
 - type: AgenticAccess
   url: agentic-access/monument-bank-agentic-access.yml
 - type: ErrorCatalog
