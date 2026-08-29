@@ -22,6 +22,18 @@ description: >-
   Banking it does so against the Open Banking Implementation Entity (OBIE) Open
   Data and Read/Write API Standards under the PSD2 / FCA framework, secured with
   FAPI-grade OAuth2/OIDC, mutual-TLS, and PSD2 strong customer authentication.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
