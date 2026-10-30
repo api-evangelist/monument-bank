@@ -1,4 +1,4 @@
-# Monument Bank (monument-bank)
+# Monument Bank
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,122 +64,140 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Monument Bank Limited is a UK challenger bank headquartered at 33 Cavendish Square, London, purpose-built for the "mass affluent" - professionals, entrepreneurs, and savers historically underserved between mainstream retail and private banking. It holds a full UK banking licence (granted November 2021), is authorised by the PRA and regulated by the FCA and PRA under FRN 849724, and offers app-only savings products with FSCS-protected deposits. It is not one of the CMA9 mandated banks and does not publish a public developer portal; where it participates in UK Open Banking it conforms to the Open Banking Implementation Entity (OBIE) Open Data and Read/Write API Standards under the PSD2 / FCA framework.
+Monument Bank Limited is a UK challenger bank headquartered at 33 Cavendish Square, London, purpose-built for the "mass affluent" - professionals, entrepreneurs, and savers with substantial assets who have historically been underserved between mainstream retail banking and private banking. It received a full UK banking licence in November 2021, launched its first app-based savings products in early 2022, and in 2024 joined Tech Nation's Future Fifty cohort of leading pre-IPO companies. Monument is authorised by the Prudential Regulation Authority (PRA) and regulated by the Financial Conduct Authority (FCA) and PRA under FRN 849724, with eligible deposits protected by the FSCS. It is privately held (investors include Dubai Investments, which took a ~9% stake) and operates the technology it spun out as Monument Technology. Its current product suite is app-only savings - easy access accounts, cash ISAs, limited access savers, notice accounts, and fixed-term deposits - plus a planned move into buy-to-let and property lending. As a smaller, savings-and-lending-focused ASPSP it is NOT one of the CMA9 mandated banks and does not publish a public developer portal; where it participates in UK Open Banking it does so against the Open Banking Implementation Entity (OBIE) Open Data and Read/Write API Standards under the PSD2 / FCA framework, secured with FAPI-grade OAuth2/OIDC, mutual-TLS, and PSD2 strong customer authentication.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/monument-bank/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/monument-bank/refs/heads/main/apis.yml)
+**Areas:** Financial Services · Banking · Open Banking · PSD2 · OBIE · United Kingdom · Savings · Challenger Bank · Account Information · Payments
 
-## Tags
+## Monument Bank on APIs.io
 
-- Financial Services
-- Banking
-- Open Banking
-- PSD2
-- OBIE
-- United Kingdom
-- Savings
-- Challenger Bank
-- Account Information
-- Payments
+Everything profiled for Monument Bank is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/monument-bank/](https://apis.io/providers/monument-bank/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (34)
 
-- **Created:** 2026-07-23
-- **Modified:** 2026-07-23
+- [Monument Bank Account Access Consents API](https://apis.io/apis/monument-bank/monument-bank-account-access-consents-api/) — The Account Access Consents API from Monument Bank — 2 operation(s) for account access consents.
+- [Monument Bank Accounts API](https://apis.io/apis/monument-bank/monument-bank-accounts-api/) — The Accounts API from Monument Bank — 2 operation(s) for accounts.
+- [Monument Bank ATM API](https://apis.io/apis/monument-bank/monument-bank-atm-api/) — Endpoint for getting ATM data
+- [Monument Bank Balances API](https://apis.io/apis/monument-bank/monument-bank-balances-api/) — The Balances API from Monument Bank — 2 operation(s) for balances.
+- [Monument Bank BCA API](https://apis.io/apis/monument-bank/monument-bank-bca-api/) — Endpoint for getting Business Current Account data
+- [Monument Bank Beneficiaries API](https://apis.io/apis/monument-bank/monument-bank-beneficiaries-api/) — The Beneficiaries API from Monument Bank — 2 operation(s) for beneficiaries.
+- [Monument Bank Branch API](https://apis.io/apis/monument-bank/monument-bank-branch-api/) — Endpoint for getting Branch data
+- [Monument Bank CCC API](https://apis.io/apis/monument-bank/monument-bank-ccc-api/) — Endpoint for getting Commercial Credit Card data
+- [Monument Bank Direct Debits API](https://apis.io/apis/monument-bank/monument-bank-direct-debits-api/) — The Direct Debits API from Monument Bank — 2 operation(s) for direct debits.
+- [Monument Bank Domestic Payment Consents API](https://apis.io/apis/monument-bank/monument-bank-domestic-payment-consents-api/) — The Domestic Payment Consents API from Monument Bank — 3 operation(s) for domestic payment consents.
+- [Monument Bank Domestic Payments API](https://apis.io/apis/monument-bank/monument-bank-domestic-payments-api/) — The Domestic Payments API from Monument Bank — 3 operation(s) for domestic payments.
+- [Monument Bank Domestic Scheduled Payment Consents API](https://apis.io/apis/monument-bank/monument-bank-domestic-scheduled-payment-consents-api/) — The Domestic Scheduled Payment Consents API from Monument Bank — 2 operation(s) for domestic scheduled payment consents.
+- [Monument Bank Domestic Scheduled Payments API](https://apis.io/apis/monument-bank/monument-bank-domestic-scheduled-payments-api/) — The Domestic Scheduled Payments API from Monument Bank — 3 operation(s) for domestic scheduled payments.
+- [Monument Bank Domestic Standing Order Consents API](https://apis.io/apis/monument-bank/monument-bank-domestic-standing-order-consents-api/) — The Domestic Standing Order Consents API from Monument Bank — 2 operation(s) for domestic standing order consents.
+- [Monument Bank Domestic Standing Orders API](https://apis.io/apis/monument-bank/monument-bank-domestic-standing-orders-api/) — The Domestic Standing Orders API from Monument Bank — 3 operation(s) for domestic standing orders.
+- [Monument Bank File Payment Consents API](https://apis.io/apis/monument-bank/monument-bank-file-payment-consents-api/) — The File Payment Consents API from Monument Bank — 3 operation(s) for file payment consents.
+- [Monument Bank File Payments API](https://apis.io/apis/monument-bank/monument-bank-file-payments-api/) — The File Payments API from Monument Bank — 4 operation(s) for file payments.
+- [Monument Bank Funds Confirmation Consents API](https://apis.io/apis/monument-bank/monument-bank-funds-confirmation-consents-api/) — The Funds Confirmation Consents API from Monument Bank — 2 operation(s) for funds confirmation consents.
+- [Monument Bank Funds Confirmations API](https://apis.io/apis/monument-bank/monument-bank-funds-confirmations-api/) — The Funds Confirmations API from Monument Bank — 1 operation(s) for funds confirmations.
+- [Monument Bank International Payment Consents API](https://apis.io/apis/monument-bank/monument-bank-international-payment-consents-api/) — The International Payment Consents API from Monument Bank — 3 operation(s) for international payment consents.
+- [Monument Bank International Payments API](https://apis.io/apis/monument-bank/monument-bank-international-payments-api/) — The International Payments API from Monument Bank — 3 operation(s) for international payments.
+- [Monument Bank International Scheduled Payments API](https://apis.io/apis/monument-bank/monument-bank-international-scheduled-payments-api/) — The International Scheduled Payments API from Monument Bank — 3 operation(s) for international scheduled payments.
+- [Monument Bank International Scheduled Payments Consents API](https://apis.io/apis/monument-bank/monument-bank-international-scheduled-payments-consents-api/) — The International Scheduled Payments Consents API from Monument Bank — 3 operation(s) for international scheduled payments consents.
+- [Monument Bank International Standing Orders API](https://apis.io/apis/monument-bank/monument-bank-international-standing-orders-api/) — The International Standing Orders API from Monument Bank — 3 operation(s) for international standing orders.
+- [Monument Bank International Standing Orders Consents API](https://apis.io/apis/monument-bank/monument-bank-international-standing-orders-consents-api/) — The International Standing Orders Consents API from Monument Bank — 2 operation(s) for international standing orders consents.
+- [Monument Bank Offers API](https://apis.io/apis/monument-bank/monument-bank-offers-api/) — The Offers API from Monument Bank — 2 operation(s) for offers.
+- [Monument Bank Parties API](https://apis.io/apis/monument-bank/monument-bank-parties-api/) — The Parties API from Monument Bank — 3 operation(s) for parties.
+- [Monument Bank PCA API](https://apis.io/apis/monument-bank/monument-bank-pca-api/) — Endpoint for getting Personal Current Account data
+- [Monument Bank Products API](https://apis.io/apis/monument-bank/monument-bank-products-api/) — The Products API from Monument Bank — 2 operation(s) for products.
+- [Monument Bank Scheduled Payments API](https://apis.io/apis/monument-bank/monument-bank-scheduled-payments-api/) — The Scheduled Payments API from Monument Bank — 2 operation(s) for scheduled payments.
+- [Monument Bank SME API](https://apis.io/apis/monument-bank/monument-bank-sme-api/) — Endpoint for getting Unsecured SME Loan data
+- [Monument Bank Standing Orders API](https://apis.io/apis/monument-bank/monument-bank-standing-orders-api/) — The Standing Orders API from Monument Bank — 2 operation(s) for standing orders.
+- [Monument Bank Statements API](https://apis.io/apis/monument-bank/monument-bank-statements-api/) — The Statements API from Monument Bank — 5 operation(s) for statements.
+- [Monument Bank Transactions API](https://apis.io/apis/monument-bank/monument-bank-transactions-api/) — The Transactions API from Monument Bank — 2 operation(s) for transactions.
 
-## APIs
+### Published properties
 
-> Monument does not publish a public developer portal or a confirmed Open Data endpoint. Its API host `api.monument.co` resolves but responds `403` (access-controlled). The API entries below are represented against the **shared OBIE UK Open Banking standards** and the harvested specs are the standard documents, **not** Monument-proprietary contracts.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Monument Bank Open Data API
+#### Agentic access (1)
 
-UK Open Banking Open Data API - the PUBLIC, unauthenticated reference-data surface (products, ATMs, branches, PCA/BCA, SME loans, commercial credit cards) defined by the OBIE Open Data Standard. Unverified for Monument.
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- **Human URL:** [https://github.com/OpenBankingUK/opendata-api-spec-compiled](https://github.com/OpenBankingUK/opendata-api-spec-compiled)
-- **Base URL:** `https://api.monument.co/open-data/v2.3` (unverified / gated)
+- [Monument Bank Agentic Access](https://apis.io/agentic-access/monument-bank/monument-bank-agentic-access/)
 
-#### Tags
+#### Collections (1)
 
-- Open Data
-- Reference Data
-- Public
+Postman and Open Collection request collections.
 
-#### Properties
+- [Open Data API](https://apis.io/collections/monument-bank/open-obie-opendata-swagger/)
 
-- [OpenAPI](openapi/obie-opendata-swagger.json) — shared OBIE Open Data Standard (Swagger 2.0)
-- [Documentation](https://github.com/OpenBankingUK/opendata-api-spec-compiled)
-- [API Reference](https://openbankinguk.github.io/opendata-api-docs-pub/)
+#### Security (2)
 
-### Monument Bank Account and Transaction Information API
+Authentication, trust centre, and vulnerability disclosure.
 
-UK Open Banking Read/Write Account & Transaction Information (AIS) API per the OBIE Read/Write API Standard - accounts, balances, transactions, standing orders, direct debits, statements, and parties. FAPI-secured (OAuth2/OIDC, mTLS, PSD2 SCA). Unverified for Monument.
+- [Monument Bank Authentication](https://apis.io/security/monument-bank/monument-bank-authentication/)
+- [Monument Bank Domain Security](https://apis.io/security/monument-bank/monument-bank-domain-security/)
 
-- **Human URL:** [https://github.com/OpenBankingUK/read-write-api-specs](https://github.com/OpenBankingUK/read-write-api-specs)
-- **Base URL:** `https://api.monument.co/open-banking/v3.1/aisp` (unverified / gated)
+#### OAuth scopes (1)
 
-#### Tags
+The permissions the API asks for.
 
-- Account Information
-- AIS
-- Read/Write
+- [Monument Bank Scopes](https://apis.io/scopes/monument-bank/monument-bank-scopes/)
 
-#### Properties
+## Where to find this API
 
-- [OpenAPI](openapi/obie-account-info-openapi.yaml) — shared OBIE Read/Write Standard (OpenAPI 3.0)
-- [Documentation](https://github.com/OpenBankingUK/read-write-api-specs)
-- [API Reference](https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/)
-
-### Monument Bank Payment Initiation API
-
-UK Open Banking Read/Write Payment Initiation (PIS) API per the OBIE Read/Write API Standard - domestic, scheduled, standing-order, international, and file payments. FAPI-secured (OAuth2/OIDC, mTLS, PSD2 SCA). Unverified for Monument.
-
-- **Human URL:** [https://github.com/OpenBankingUK/read-write-api-specs](https://github.com/OpenBankingUK/read-write-api-specs)
-- **Base URL:** `https://api.monument.co/open-banking/v3.1/pisp` (unverified / gated)
-
-#### Tags
-
-- Payment Initiation
-- PIS
-- Read/Write
-
-#### Properties
-
-- [OpenAPI](openapi/obie-payment-initiation-openapi.yaml) — shared OBIE Read/Write Standard (OpenAPI 3.0)
-- [Documentation](https://github.com/OpenBankingUK/read-write-api-specs)
-- [API Reference](https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/)
-
-### Monument Bank Confirmation of Funds API
-
-UK Open Banking Read/Write Confirmation of Funds (CBPII) API per the OBIE Read/Write API Standard - confirms availability of funds for card-based payment instrument issuers. FAPI-secured (OAuth2/OIDC, mTLS, PSD2 SCA). Unverified for Monument.
-
-- **Human URL:** [https://github.com/OpenBankingUK/read-write-api-specs](https://github.com/OpenBankingUK/read-write-api-specs)
-- **Base URL:** `https://api.monument.co/open-banking/v3.1/cbpii` (unverified / gated)
-
-#### Tags
-
-- Confirmation of Funds
-- CBPII
-- Read/Write
-
-#### Properties
-
-- [OpenAPI](openapi/obie-confirmation-funds-openapi.yaml) — shared OBIE Read/Write Standard (OpenAPI 3.0)
-- [Documentation](https://github.com/OpenBankingUK/read-write-api-specs)
-- [API Reference](https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.monument.co/)
-- [About](https://www.monument.co/about)
-- [Blog](https://www.monument.co/blog)
-- [News](https://www.monument.co/news)
-- [LinkedIn](https://www.linkedin.com/company/monument-bank/)
 - [Support](https://www.monument.co/contact-us)
-- [FAQ](https://www.monument.co/faq)
-- [Terms of Service](https://www.monument.co/terms-and-conditions)
-- [Privacy Policy](https://www.monument.co/privacy)
-- [Compliance (FCA Register, FRN 849724)](https://register.fca.org.uk/s/firm?id=0010X00004ksS6tQAE)
+- [Blog](https://www.monument.co/blog)
+- [Compliance](https://register.fca.org.uk/s/firm?id=0010X00004ksS6tQAE)
+- [Terms of service](https://www.monument.co/terms-and-conditions)
+- [Privacy policy](https://www.monument.co/privacy)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 36.6** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 79.5 |
+| Contract quality | 46.9 |
+| Contract governance | 4.5 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 28.9 |
+
+**Agent readiness 34.5** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | verified |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | verified |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 48.0** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/monument-bank/](https://apis.io/providers/monument-bank/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Monument Bank: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/monument-bank/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
